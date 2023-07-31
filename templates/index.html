@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flask App</title>
+</head>
+<body>
+    <h1>Welcome to Flask App!</h1>
+    <button onclick="clickButton()">Click Here</button>
+    <p id="message"></p>
+    <script>
+        function clickButton() {
+            fetch('/click_here')
+                .then(response => response.text())
+                .then(data => document.getElementById("message").innerText = data)
+                .catch(error => console.error('Error:', error));
+        }
+    </script>
+</body>
+</html>
